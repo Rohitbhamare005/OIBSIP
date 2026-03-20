@@ -1,11 +1,11 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #5c88b3;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .container {
