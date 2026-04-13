@@ -79,3 +79,20 @@ function setFilter(type) {
 
 // initial load
 displayTasks();
+function editTask(index) {
+    let newText = prompt("Edit task:", tasks[index].text);
+
+    if (newText !== null && newText.trim() !== "") {
+        tasks[index].text = newText.trim();
+        save();
+        displayTasks();
+    }
+}function clearAll() {
+    if (confirm("Delete all tasks?")) {
+        tasks = [];
+        save();
+        displayTasks();
+    }
+}function toggleTheme() {
+    document.body.classList.toggle("dark");
+}

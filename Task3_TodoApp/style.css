@@ -91,4 +91,39 @@ input[type="checkbox"] {
 
 button:hover {
     background: #3b8de3;
+}/* DARK MODE */
+.dark {
+    background: #121212;
+}
+
+.dark .app {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark li {
+    background: #2a2a2a;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.actions button {
+    background: red;
+}
+
+/* EDIT BUTTON */
+.edit {
+    background: orange;
+    margin-right: 5px;
 }

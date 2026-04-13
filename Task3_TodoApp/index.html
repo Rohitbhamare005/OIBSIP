@@ -8,7 +8,11 @@
 
 <div class="app">
 
-    <h1>Task Manager 📝</h1>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Task Manager 📝</h1>
+        <button onclick="toggleTheme()">🌙</button>
+    </div>
 
     <!-- INPUT -->
     <div class="input-box">
@@ -24,6 +28,11 @@
         <button onclick="setFilter('all')">All</button>
         <button onclick="setFilter('completed')">Done</button>
         <button onclick="setFilter('pending')">Pending</button>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+        <button onclick="clearAll()">Clear All 🧹</button>
     </div>
 
     <!-- STATS -->
