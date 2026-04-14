@@ -46,7 +46,7 @@ Successfully built and deployed multiple web projects, gaining hands-on experien
 
 ## 🌐 Live Links
 
-- Task 1: https://rohitbhamare005.github.io/OIBSIP/Task1_Calculator/
-- Task 2: https://rohitbhamare005.github.io/OIBSIP/Task2_TributePage/
-- Task 3: https://rohitbhamare005.github.io/OIBSIP/Task3_TodoApp/
-- Task 4: https://rohitbhamare005.github.io/OIBSIP/Task4_LoginSystem/
+- Task 1: https://rohitbhamare005.github.io/OIBSIP_WebDevelopment/Task1_Calculator/
+- Task 2: https://rohitbhamare005.github.io/OIBSIP_WebDevelopment/Task2_TributePage/
+- Task 3: https://rohitbhamare005.github.io/OIBSIP_WebDevelopment/Task3_TodoApp/
+- Task 4: https://rohitbhamare005.github.io/OIBSIP_WebDevelopment/Task4_LoginSystem/
