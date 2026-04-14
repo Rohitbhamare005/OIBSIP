@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Welcome 👋</h2>
+    <p id="userDisplay"></p>
+
+    <button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (!currentUser) {
+    window.location.href = "index.html";
+} else {
+    document.getElementById("userDisplay").innerText =
+        "Logged in as: " + currentUser.username;
+}
+
+function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

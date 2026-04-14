@@ -1,17 +1,21 @@
 let isLogin = true;
 
+// AUTO LOGIN
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+if (currentUser) {
+    window.location.href = "dashboard.html";
+}
+
 function toggleMode() {
     isLogin = !isLogin;
 
-    document.getElementById("title").innerText = isLogin ? "Login" : "Register";
+    document.getElementById("title").innerText =
+        isLogin ? "Login" : "Register";
 
-    document.querySelector(".switch span").innerText =
-        isLogin ? "Register" : "Login";
-
-    document.querySelector(".switch").innerHTML =
+    document.querySelector(".switch").innerText =
         isLogin
-        ? `Don't have an account? <span onclick="toggleMode()">Register</span>`
-        : `Already have an account? <span onclick="toggleMode()">Login</span>`;
+        ? "Don't have an account? Register"
+        : "Already have an account? Login";
 
     document.getElementById("message").innerText = "";
 }
@@ -22,23 +26,36 @@ function submitForm() {
     let message = document.getElementById("message");
 
     if (!username || !password) {
-        message.innerText = "Please fill all fields";
+        message.innerText = "Fill all fields";
         message.style.color = "red";
         return;
     }
 
-    let storedUser = JSON.parse(localStorage.getItem("user"));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (isLogin) {
-        if (storedUser && storedUser.username === username && storedUser.password === password) {
-            message.innerText = "Login successful ✅";
-            message.style.color = "green";
+        let user = users.find(u => u.username === username && u.password === password);
+
+        if (user) {
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            window.location.href = "dashboard.html";
         } else {
             message.innerText = "Invalid credentials ❌";
             message.style.color = "red";
         }
+
     } else {
-        localStorage.setItem("user", JSON.stringify({ username, password }));
+        let exists = users.find(u => u.username === username);
+
+        if (exists) {
+            message.innerText = "User already exists ⚠️";
+            message.style.color = "orange";
+            return;
+        }
+
+        users.push({ username, password });
+        localStorage.setItem("users", JSON.stringify(users));
+
         message.innerText = "Registered successfully ✅";
         message.style.color = "green";
     }

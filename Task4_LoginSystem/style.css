@@ -32,7 +32,8 @@ button {
     cursor: pointer;
 }
 
-.switch span {
+.switch {
     color: blue;
     cursor: pointer;
+    margin-top: 10px;
 }
